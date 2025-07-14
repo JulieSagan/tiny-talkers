@@ -531,12 +531,50 @@
       </div>
     </section>
 
-    <section class="form">
+    <section class="form-section">
       <div class="background-box background-box_white">
         <h3 class="section__subtitle">Register to grab a free lesson</h3>
-        <form action="" method="get">
 
-        </form>
+        <div class="form-section__wrapper">
+          <form class="form" action="" method="get">
+            <label class="form__field">
+              <p class="quotes"><span class="brackets">(</span>”<span class="brackets">)</span></p>
+              We’d love to know how to address you
+              <input class="form__input" type="text" name="parent-name" autocomplete="name" placeholder="Parent or Gardian name" required>
+            </label>
+
+            <label class="form__field">
+              <p class="quotes"><span class="brackets">(</span>”<span class="brackets">)</span></p>
+              Where to send your free materials
+              <input class="form__input" type="email" name="email" autocomplete="email" placeholder="Parent or Guardian email" required>
+            </label>
+
+            <label class="form__field">
+              <p class="quotes"><span class="brackets">(</span>”<span class="brackets">)</span></p>
+              And of course, what’s your little one’s name?
+              <input class="form__input" type="text" name="child-name" autocomplete="given-name" placeholder="Child’s name" required>
+            </label>
+
+            <label class="form__field">
+              <p class="quotes"><span class="brackets">(</span>”<span class="brackets">)</span></p>
+              How old the child is?
+              <input class="form__input" type="number" name="age" autocomplete="off" placeholder="Age" required>
+            </label>
+
+            <div class="form-select__group">
+              <label for="plan" class="form__field">
+                <p class="quotes"><span class="brackets">(</span>”<span class="brackets">)</span></p>
+                Please select your plan</label>
+              <select name="user-plan" id="plan" class="form__input" required>
+                <option disabled value="" selected>Choose plan</option>
+                <option value="review">Review & Refresh</option>
+                <option value="guided">Guided Learning</option>
+                <option value="interactive">Interactive Feedback</option>
+              </select>
+            </div>
+
+          </form>
+        </div>
       </div>
     </section>
 
