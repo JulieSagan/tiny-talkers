@@ -133,6 +133,12 @@ main{
   letter-spacing: -0.24px;
 }
 
+@media (max-width: 1440px) {
+  .logo__title {
+    font-size: 75px;
+  }
+}
+
 .dialogue {
   display: flex;
   flex-direction: column;
@@ -207,6 +213,7 @@ main{
 .cards {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
@@ -220,6 +227,7 @@ main{
   padding: 20px;
   width: 100%;
   height: 649px;
+  flex: 1 1 calc(25% - 15px);
 }
 
 .card__header {
@@ -282,6 +290,7 @@ main{
 }
 
 .card__list_left li::before {
+  display: inline-block;
   text-align: left;
   content: "•";
   margin-right: 5px;
@@ -291,6 +300,7 @@ main{
   text-align: right;
 }
 .card__list_right li::before {
+  display: inline-block;
   text-align: right;
   content: "•";
   margin-right: 5px;
@@ -312,6 +322,56 @@ main{
   font-size: 1.7rem;
   color: #747474;
 }
+
+@media (max-width: 1440px) {
+
+  .card {
+    height: 500px;
+  }
+
+  .card-image {
+    height: 250px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card-icon .icon__brackets {
+    font-size: 1.2rem;
+  }
+
+  .card__list_left li::before,
+  .card__list_right li::before {
+    display: none;
+  }
+}
+
+  @media (max-width: 1280px) {
+    .card {
+      height: 700px;
+      flex: 1 1 calc(50% - 10px);
+    }
+    .card-image {
+      height: 500px;
+    }
+
+    .card__list_left li::before,
+    .card__list_right li::before {
+      display: inline-block;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .card-icon .icon__brackets {
+      font-size: 1.7rem;
+    }
+
+   }
 
 .advantages {
   display: flex;
@@ -495,6 +555,17 @@ main{
   width: 150px;
   height: 75%;
   object-fit: contain;
+}
+
+@media (max-width: 1440px) {
+  .grid-cards__container {
+    grid-template-rows: minmax(100px, 160px) 300px;
+  }
+
+  .grid-cards__container_interactive-classes {
+    grid-template-rows: 200px 300px;
+  }
+
 }
 
 .emoji__dialogue {
@@ -725,6 +796,21 @@ main{
   width: 100%;
 }
 
+@media (max-width: 1440px) {
+
+  .plan-card {
+    height: 700px;
+  }
+
+  .plan-card__body {
+    font-size: 16px;
+  }
+
+  .plan-card__header {
+    margin-bottom: 30px;
+  }
+}
+
 .form-section__wrapper {
   display: flex;
   flex-direction: column;
@@ -822,7 +908,7 @@ select.form__input option {
 .checkbox {
   display: inline-block;
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .checkbox__input {
@@ -872,12 +958,17 @@ select.form__input option {
   outline: 2px solid #1B57FF;
 }
 
+.form-section__wrapper {
+  margin-bottom: 60px;
+}
+
 .footer__wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  font-size: 16px;
 }
 
 .footer__copyright {
