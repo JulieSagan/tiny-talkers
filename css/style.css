@@ -741,6 +741,10 @@ main{
 }
 
 .form__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
   color: #4E4B52;
   line-height: 0.7;
   letter-spacing: -0.24px;
@@ -777,6 +781,21 @@ input[type="number"] {
 .form-select__group {
   display: flex;
   flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.form-select__group::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 75%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='%23747474' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 /*TO DO костыль в стилизации select. Исправить JS-ом*/
@@ -784,9 +803,72 @@ select.form__input {
   color: #747474;
   font-size: 24px;
   font-family: inherit;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 select.form__input option {
   color: #747474;
   font-size: 24px;
 }
+
+.quote-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #4E4B52;
+}
+.checkbox {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.checkbox__input {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkbox__state {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+}
+
+.checkbox__control {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid #4E4B52;
+  background: none;
+}
+
+.checkbox__icon {
+  display: none;
+}
+
+.checkbox__label {
+  color: #4E4B52;
+}
+
+.checkbox__links a {
+  color: #1B57FF;
+  text-decoration: none;
+}
+
+.checkbox__input:checked ~ .checkbox__state .checkbox__control {
+  border: none;
+}
+
+.checkbox__input:checked ~ .checkbox__state .checkbox__icon {
+  display: block;
+  fill: #4E4B52;
+}
+
+.checkbox__input:focus-visible + .checkbox__state .checkbox__control {
+  outline: 2px solid #1B57FF;
+}
+
