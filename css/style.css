@@ -12,6 +12,19 @@ body {
   font-weight: 400;
 }
 
+@media (max-width: 800px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
 @font-face {
   font-family: "Apfel Grotezk";
   src: url("../fonts/ApfelGrotezk-Regular.woff2") format("woff2");
@@ -35,13 +48,22 @@ main{
   gap: 20px;
 }
 
+@media (max-width: 360px) {
+  main {
+    padding: 10px;
+  }
+}
+
 .background-box {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 40px);
   border-radius: 15px;
   border: 1px solid #FFF;
   background: #EBECE5;
+}
+
+.background-box_hero {
+  min-height: calc(100vh - 40px);
 }
 
 .background-box_white {
@@ -103,6 +125,56 @@ main{
   font-size: 24px;
 }
 
+.burger {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+}
+
+.burger svg {
+  stroke: #4E4B52;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 800px) {
+  .navigation__menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #FFFFFF;
+    padding: 20px;
+    gap: 20px;
+    z-index: 100;
+  }
+
+  .navigation__menu.active {
+    display: flex;
+  }
+
+  .button {
+    margin-left: auto;
+  }
+
+  .burger {
+    display: block;
+    padding: 20px;
+  }
+
+  .header__container {
+    align-self: center;
+    position: relative;
+  }
+
+
+}
+
 .logo {
   display: flex;
   flex-direction: column;
@@ -126,16 +198,20 @@ main{
 .logo__slogan {
   color: #4E4B52;
   font-family: "Apfel Grotezk", Arial, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.2; /* 24px */
+  line-height: 1.2;
   letter-spacing: -0.24px;
+  text-align: center;
 }
 
 @media (max-width: 1440px) {
   .logo__title {
     font-size: 75px;
+  }
+}
+
+@media (max-width: 800px) {
+  .logo__title {
+    margin-top: 10px;
   }
 }
 
@@ -194,7 +270,7 @@ main{
 .dialogue__text_small {
   color: #4E4B52;
   text-align: center;
-  line-height: 100%; /* 24px */
+  line-height: 100%;
   letter-spacing: -0.24px;
   max-width: 447px;
 }
@@ -208,6 +284,24 @@ main{
   flex-direction: column;
   align-items: center;
   font-size: 2.667rem;
+}
+
+@media (max-width: 800px) {
+  .dialogue__text_large {
+    font-size: 2.5rem;
+    max-width: 700px;
+    margin-bottom: 20px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .dialogue__text_small {
+   padding-inline: 20px;
+  }
 }
 
 .cards {
@@ -370,8 +464,34 @@ main{
     .card-icon .icon__brackets {
       font-size: 1.7rem;
     }
-
    }
+
+@media (max-width: 800px) {
+    .card {
+      height: 500px;
+      flex: 1 1 calc(50% - 10px);
+    }
+    .card-image {
+      height: 300px;
+    }
+}
+
+@media (max-width: 760px) {
+  .card {
+    height: 500px;
+    flex: 1 1 calc(100% - 10px);
+  }
+  .card-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+
+.card-icon {
+  display: none;
+}
+}
 
 .advantages {
   display: flex;
@@ -454,6 +574,46 @@ main{
   letter-spacing: -0.24px;
   margin-top: -10px;
   margin-bottom: 25px;
+}
+
+@media (max-width: 800px) {
+  .section__subtitle {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .advantages__title {
+    font-size: 50px;
+    padding-inline: 20px;
+    line-height: 1;
+  }
+
+  .advantages__description_left,
+  .advantages__description_right {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .section__subtitle {
+    margin-top: 20px;
+  }
+
+  .advantages__title {
+    font-size: 32px;
+    padding-inline: 20px;
+    line-height: 1;
+  }
+
+  .advantages__text {
+    padding-inline: 20px;
+  }
+
+  .quotes {
+    padding-inline: 20px;
+  }
 }
 
 .grid-cards__container {
@@ -559,13 +719,95 @@ main{
 
 @media (max-width: 1440px) {
   .grid-cards__container {
-    grid-template-rows: minmax(100px, 160px) 300px;
+    grid-template-rows: minmax(100px, 200px) 300px;
   }
 
   .grid-cards__container_interactive-classes {
     grid-template-rows: 200px 300px;
   }
+}
 
+@media (max-width: 800px) {
+  .grid-cards__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px 250px 250px; /* 🎯 высоты строк по порядку */
+    grid-template-areas:
+      "listening listening"
+      "topic poetry"
+      "writing poetry";
+  }
+
+  .grid-item__image_writing {
+    max-width: 70%;
+    align-self: flex-start;
+  }
+
+  .grid-cards__container_interactive-classes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px 250px 250px;
+    grid-template-areas:
+  "movies grammar"
+  "speaking grammar"
+  "games music";
+  }
+
+  .grid-item__image_games {
+    max-width: 60%;
+    align-self: flex-start;
+    border-radius: 10px;
+  }
+
+  .grid-item__image_movies {
+    border-radius: 10px;
+  }
+  }
+
+@media (max-width: 360px) {
+  .grid-cards__container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 250px;
+    grid-template-areas:
+      "listening"
+      "topic"
+      "poetry"
+      "writing";
+
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+    .grid-cards__container_interactive-classes {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 250px;
+      grid-template-areas:
+        "movies"
+        "grammar"
+        "speaking"
+        "games"
+        "music";
+
+      margin-bottom: 0;
+    }
+
+    .grid-item__title {
+      margin-bottom: 10px;
+    }
+
+    .grid-item__image {
+      max-width: 80%;
+    }
+
+    .grid-item__image-cursor {
+      width: 100px;
+      height: 50%;
+    }
+
+    .grid-item__image_movies {
+      max-width: 80%;
+      border-radius: 3px;
+    }
 }
 
 .emoji__dialogue {
@@ -585,6 +827,13 @@ main{
 
 .image-container__teacher {
   border-radius: 10px;
+}
+
+@media (max-width: 360px) {
+  .image-container {
+    margin-top: 20px;
+  }
+
 }
 
 .testimonials-container {
@@ -694,6 +943,45 @@ main{
   color: #4E4B52;
   line-height: 1.1;
   letter-spacing: -0.24px;
+}
+
+@media (max-width: 800px) {
+
+  .testimonials-container {
+    height: 800px;
+  }
+
+  .testimonials-card__image {
+    height: 600px;
+  }
+
+  .testimonials-info__kid-name,
+  .testimonials-info__parent-name {
+    font-size: 20px;
+  }
+
+  .testimonials-info__kid-name {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .testimonials-container {
+    max-height: 550px;
+  }
+
+.testimonials-card__image {
+  height: 450px;
+}
+
+.testimonials-user-box {
+  padding: 10px;
+}
+
+.testimonials-user-box__text {
+  font-size: 16px;
+}
 }
 
 .plans__container {
@@ -958,8 +1246,41 @@ select.form__input option {
   outline: 2px solid #1B57FF;
 }
 
+@media (max-width: 800px) {
+
+  .form__input {
+    font-size: 20px;
+  }
+}
+
 .form-section__wrapper {
   margin-bottom: 60px;
+}
+
+@media (max-width: 360px) {
+  .form {
+    gap: 15px;
+  }
+
+  .form__field {
+    padding-inline: 20px;
+    font-size: 16px;
+  }
+
+  .quote-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .form__input {
+    padding: 12px 15px;
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .form-select__group {
+    font-size: 18px;
+  }
 }
 
 .footer__wrapper {
