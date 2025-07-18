@@ -587,13 +587,15 @@
                 <path d="M4.66 40.54C1.735 34.06 0.16 27.04 0.16 20.2C0.16 13.27 1.69 6.34 4.57 0.219999L7.9 0.939998C5.56 6.385 4.3 12.955 4.3 20.29C4.3 27.715 5.605 34.33 8.08 39.82L4.66 40.54ZM11.691 19.85C14.391 20.45 17.091 19.25 17.091 16.55C13.791 16.85 11.391 14.825 11.391 11.75C11.391 8.975 13.266 6.95 15.891 6.95C19.041 6.95 21.291 9.875 21.291 14C21.291 19.4 17.691 24.05 11.391 23.15L11.691 19.85ZM23.991 19.85C26.691 20.45 29.391 19.25 29.391 16.55C26.091 16.85 23.691 14.825 23.691 11.75C23.691 8.975 25.566 6.95 28.191 6.95C31.341 6.95 33.591 9.875 33.591 14C33.591 19.4 29.991 24.05 23.691 23.15L23.991 19.85ZM36.3093 39.82C38.7843 34.33 40.0893 27.715 40.0893 20.29C40.0893 12.955 38.8293 6.385 36.4893 0.939998L39.8193 0.219999C42.6993 6.34 44.2293 13.27 44.2293 20.2C44.2293 27.04 42.6543 34.06 39.7293 40.54L36.3093 39.82Z" fill="#4E4B52"/>
                 </svg>
               </span>
-                Please select your plan</label>
-              <select name="user-plan" id="plan" class="form__input" required>
-                <option disabled value="" selected>Choose plan</option>
-                <option value="review">Review & Refresh</option>
-                <option value="guided">Guided Learning</option>
-                <option value="interactive">Interactive Feedback</option>
-              </select>
+                <span class="form__label">Please select your plan</span>
+
+                <select name="user-plan" id="plan" class="form__input" required>
+                  <option disabled value="" selected>Choose plan</option>
+                  <option value="review">Review & Refresh</option>
+                  <option value="guided">Guided Learning</option>
+                  <option value="interactive">Interactive Feedback</option>
+                </select>
+              </label>
             </div>
 
             <label class="checkbox">
@@ -606,11 +608,9 @@
                 </div>
 
                 <div class="checkbox__label">
-                  I have read and agree
-                </div>
-
-                <div class="checkbox__links">
-                  <a href="#">Privacy Policy</a> & <a href="#">Terms and Conditions</a>
+                  I have read and agree <a class="checkbox__link" href="#">Privacy Policy</a>
+                  &
+                  <a class="checkbox__link" href="#">Terms and Conditions</a>
                 </div>
               </div>
             </label>
@@ -626,6 +626,7 @@
     <section class="footer">
       <div class="footer__wrapper">
         <p class="footer__copyright">©Tiny Talkers 2025</p>
+        <a href="https://dsgnsapiens.com" target="_blank" rel="noopener noreferrer" class="footer__link">Designed by DSGN Sapiens</a>
       </div>
     </section>
   </main>

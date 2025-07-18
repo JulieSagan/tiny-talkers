@@ -18,7 +18,7 @@ body {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   body {
     font-size: 18px;
     line-height: 1.2;
@@ -48,7 +48,7 @@ main{
   gap: 20px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   main {
     padding: 10px;
   }
@@ -168,8 +168,6 @@ main{
     align-self: center;
     position: relative;
   }
-
-
 }
 
 .logo {
@@ -209,6 +207,16 @@ main{
 @media (max-width: 800px) {
   .logo__title {
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo__title {
+    font-size: 50px;
+  }
+
+  .logo__slogan {
+    max-width: 280px;
   }
 }
 
@@ -295,10 +303,36 @@ main{
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
+
+  .dialogue__text_large {
+    padding-inline: 10px;
+  }
+
   .dialogue__text_small {
    padding-inline: 20px;
   }
+
+  .dialogue__emoji {
+    font-size: 2.5rem;
+  }
+
+  .dialogue__emoji-brackets {
+    font-size: 1.5rem;
+  }
+
+  .dialogue__text_large {
+    font-size: 32px;
+  }
+
+  .dialogue__emoji-brackets_small {
+    font-size: 1rem;
+  }
+
+  .dialogue__emoji_small {
+    font-size: 2rem;
+  }
+
 }
 
 .cards {
@@ -483,7 +517,7 @@ main{
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
 
 .card-icon {
   display: none;
@@ -592,7 +626,7 @@ main{
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
 
   .section__subtitle {
     margin-top: 20px;
@@ -600,7 +634,7 @@ main{
 
   .advantages__title {
     font-size: 32px;
-    padding-inline: 20px;
+    padding-inline: 10px;
     line-height: 1;
   }
 
@@ -760,7 +794,7 @@ main{
   }
   }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .grid-cards__container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 250px;
@@ -826,7 +860,7 @@ main{
   border-radius: 10px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .image-container {
     margin-top: 20px;
   }
@@ -962,7 +996,7 @@ main{
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
 
   .testimonials-container {
     max-height: 550px;
@@ -1109,6 +1143,7 @@ main{
   flex-direction: column;
   gap: 30px;
   width: 100%;
+  padding-inline: 20px;
 }
 
 .form__field {
@@ -1119,12 +1154,14 @@ main{
   color: #4E4B52;
   line-height: 0.7;
   letter-spacing: -0.24px;
+  font-size: 20px;
 }
 
 .form__input option {
   color: #4E4B52;
 }
-.form__input {
+.form__input,
+select.form__input {
   width: 100%;
   background: #EBECE5;
   border-radius: 10px;
@@ -1134,7 +1171,6 @@ main{
   font-style: normal;
   font-weight: 400;
   line-height: 1.1;
-  margin-top: 10px;
 }
 
 /* Убираем стрелочки в Chrome/Safari */
@@ -1159,7 +1195,7 @@ input[type="number"] {
 .form-select__group::after {
   content: '';
   position: absolute;
-  right: 20px;
+  right: 45px;
   top: 75%;
   transform: translateY(-50%);
   width: 24px;
@@ -1171,10 +1207,15 @@ input[type="number"] {
 
 /*TO DO костыль в стилизации select. Исправить JS-ом*/
 select.form__input {
-  color: #747474;
+  width: 100%;
+  padding: 18px 20px;
   font-size: 24px;
   font-family: inherit;
-  width: 100%;
+  color: #747474;
+  background-color: #EBECE5;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1190,6 +1231,7 @@ select.form__input option {
   height: 20px;
   fill: #4E4B52;
 }
+
 .checkbox {
   display: inline-block;
   position: relative;
@@ -1204,9 +1246,10 @@ select.form__input option {
 .checkbox__state {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 16px;
+  line-height: 1.2;
 }
 
 .checkbox__control {
@@ -1218,24 +1261,25 @@ select.form__input option {
 }
 
 .checkbox__icon {
-  display: none;
+  display: block;
+  opacity: 0;
 }
 
 .checkbox__label {
   color: #4E4B52;
 }
 
-.checkbox__links a {
+.checkbox__link {
   color: #1B57FF;
   text-decoration: none;
 }
 
 .checkbox__input:checked ~ .checkbox__state .checkbox__control {
-  border: none;
+  border: transparent;
 }
 
 .checkbox__input:checked ~ .checkbox__state .checkbox__icon {
-  display: block;
+  opacity: 1;
   fill: #4E4B52;
 }
 
@@ -1248,19 +1292,27 @@ select.form__input option {
   .form__input {
     font-size: 20px;
   }
+
+  .form-select__group.form__field {
+    margin-bottom: 6px;
+  }
 }
 
 .form-section__wrapper {
   margin-bottom: 60px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .form {
     gap: 15px;
   }
 
+  .form-section__wrapper {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
   .form__field {
-    padding-inline: 20px;
     font-size: 16px;
   }
 
@@ -1269,14 +1321,20 @@ select.form__input option {
     height: 15px;
   }
 
-  .form__input {
+  input.form__input {
     padding: 12px 15px;
     font-size: 18px;
-    margin-top: 0;
   }
 
-  .form-select__group {
+  .form-select__group.form__field {
     font-size: 18px;
+    padding-inline: 20px;
+  }
+
+  select.form__input {
+    padding: 12px 15px;
+    font-size: 18px;
+    box-sizing: border-box;
   }
 }
 
