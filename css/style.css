@@ -158,13 +158,10 @@ main{
     display: flex;
   }
 
-  .button {
-    margin-left: auto;
-  }
-
   .burger {
     display: block;
     padding: 20px;
+    margin-right: auto;
   }
 
   .header__container {
