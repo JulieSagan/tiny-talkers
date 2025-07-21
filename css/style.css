@@ -705,6 +705,11 @@ main{
   margin-top: auto;
 }
 
+.grid-item__image_writing {
+  align-self: flex-start;
+}
+
+
 .grid-cards__container_interactive-classes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
